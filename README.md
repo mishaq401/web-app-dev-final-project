@@ -17,7 +17,7 @@ have complete control over managing their accounts & articles. The users can als
 upload images and give rating to articles. The uses can also search articles using
 various filters and also view profiles of other users.
 
-Technologies Used:
+<h3>Technologies Used:</h3>
 <ul>
 
 <li><strong>Frontend:</strong> ReactJS, Bootstrap, Css, Html </li>
