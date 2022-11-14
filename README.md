@@ -29,7 +29,9 @@ various filters and also view profiles of other users.
 
 # Getting Started
 
-`cd` to `App` directory than to `server` & `client` directories and run following commands.
+Before Starting Make sure You Have Latest Version of NodeJS Installed In Your system or download it from here: [NodeJS Download](https://nodejs.org/en/download/)
+Clone The repository and on your terninal/cli `cd` to `App` directory than to `server` & `client` directories and run following commands.
+
 
 ```
 npm i
