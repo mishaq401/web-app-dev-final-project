@@ -1,14 +1,13 @@
 # Final Project For Web Application Development ( Blog With CMS ) ( React, Express, MySQL, NodeJS )
 
-<h3>PROJECT MEMBERS: </h3>
+<br>
 
-<ul>
+## PROJECT MEMBERS: 
 
-<li> Muhammad Ishaq ( BITM-s22-035 )</li>
-<li> Jahanzaib Rafique ( BITM-f20-079 )</li>
-</ul>
+- Muhammad Ishaq ( BITM-s22-035 )
+- Jahanzaib Rafique ( BITM-f20-079 )
 
-<h3>Introduction: </h3>
+## Introduction:
 
 In our project we are creating a blog site with complete content management. The user
 will be able to register, update, delete, login their accounts. User will be able to publish, read
@@ -17,21 +16,20 @@ have complete control over managing their accounts & articles and also
 upload images (avatars, thumbnails & cover images) and give rating to articles. User can also search articles using
 various filters and also view profiles of other users.
 
-<h3>Technologies Used:</h3>
-<ul>
+## Technologies Used:
 
-<li><strong>Frontend:</strong> ReactJS, Bootstrap, Css, Html </li>
-<li><strong>Backend:</strong> ExpressJS, NodeJS </li>
-<li><strong>Database:</strong> MySQL </li>
+- <strong>Frontend:</strong> ReactJS, Bootstrap, Css, Html 
+- <strong>Backend:</strong> ExpressJS, NodeJS 
+- <strong>Database:</strong> MySQL 
 
-</ul>
-
+<br>
 
 # Getting Started
 
-Before Starting Make sure You Have Latest Version of NodeJS Installed In Your system or download it from here: [NodeJS Download](https://nodejs.org/en/download/)
+Before Starting Make sure You Have Latest Version of NodeJS Installed In Your system or download it from here: [NodeJS Download](https://nodejs.org/en/download/) <br><br>
 Clone The repository and on your terninal/cli `cd` to `App` directory than to `server` & `client` directories and run following commands.
 
+<br>
 
 ```
 npm i
@@ -41,7 +39,11 @@ npm i
 yarn i
 ```
 
+<br>
+
 Than Go to both directories and start the servers.
+
+<br>
 
 ```
 npm start
@@ -50,6 +52,7 @@ npm start
 
 yarn start
 ```
+<br>
 
 Open http://localhost:3000 with your browser to see the result through frontend.
 
