@@ -25,3 +25,30 @@ various filters and also view profiles of other users.
 <li><strong>Database:</strong> MySQL </li>
 
 </ul>
+
+
+# Getting Started
+
+`cd` to `App` directory than to `server` & `client` directories and run following commands.
+
+```
+npm i
+
+# or
+
+yarn i
+```
+
+Than Go to both directories and start the servers.
+
+```
+npm start
+
+# or
+
+yarn start
+```
+
+Open http://localhost:3000 with your browser to see the result through frontend.
+
+
