@@ -1,0 +1,168 @@
+/*  Designing Navbar  */
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar {
+
+    /* background-color: var(--section-bg); */
+    background-color: var(--primary);
+    /* background-color: #1a1a1a; */
+    /* background-color: #000; */
+
+    /* border-bottom: 2px solid #333333; */
+}
+
+.nav-link {
+    border-radius: 0;
+}
+
+.nav-link:hover {
+
+    background-color: var(--secondary) !important;
+    color: white !important;
+    /* color: white !important; */
+
+
+    /* color: red; */
+
+    box-shadow: 0px 1px 5px black;
+
+    /* cursor: pointer; */
+}
+
+
+.nav-link:active {
+
+    color: white !important;
+
+}
+
+
+@media (max-width:425px) {
+
+
+    .nav-link,
+    .navbar-nav {
+
+
+        width: 100% !important;
+        text-align: center;
+    }
+
+    .navbar {
+
+        padding: 7px 10px !important;
+    }
+
+}
+
+/* Designing BlogPost Card */
+
+.article {
+    /* border: 2px solid pink; */
+}
+
+.blog-img {
+
+    width: 320px;
+    height: 320px;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+.blog-left {
+
+    width: 750px;
+
+}
+
+@media (max-width:450px) {
+
+
+    .blog-left {
+
+        width: 320px;
+        align-items: center !important;
+
+    }
+
+    .blog-left p {
+        text-align: center;
+    }
+
+}
+
+@media (min-width:1024px) {
+
+    .blog-left {
+
+        margin-left: -65px;
+    }
+}
+
+
+/*  Designing Carousel  */
+
+.home-carousel {
+
+    /* box-shadow: 0px 0px 15px grey; */
+
+    /* height: 50vh !important; */
+}
+
+.home-carousel-image {
+
+    object-fit: cover;
+    object-position: center;
+
+}
+
+.home-carousel-inner {
+    height: 100%;
+}
+
+@media (min-width:1024px) {
+
+
+    .home-carousel {
+
+
+        height: 75vh !important;
+    }
+
+}
+
+@media (max-width:450px) {
+
+    .home-carousel {
+
+
+        height: 23vh !important;
+    }
+
+}
+
+
+/* Designing Category Card */
+
+.category-card {
+
+    /* border: 2px solid red; */
+    border: 2px solid rgb(231, 231, 231);
+
+
+}
+
+.category-icon {
+
+    background: rgb(13, 110, 253);
+    background: linear-gradient(90deg, rgba(13, 110, 253, 1) 0%, rgba(255, 0, 0, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

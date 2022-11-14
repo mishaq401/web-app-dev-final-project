@@ -1,0 +1,108 @@
+/* DESIGNING PROFILE UPPER SECTION */
+
+.profile-upper {
+
+    /* border: 2px solid red; */
+    border: 2px solid rgb(231, 231, 231);
+
+}
+
+.profile-img {
+
+    width: 200px;
+    height: 200px;
+
+    border-radius: 200px;
+
+    object-fit: cover;
+    object-position: center;
+
+    /* border: 2px solid red; */
+}
+
+.avatar-btn {
+
+    border-radius: 200px;
+    position: relative;
+}
+
+.avatar-btn:hover>.avatar-icons {
+
+    display: flex;
+}
+
+.avatar-btn:active>.avatar-icons {
+
+    backdrop-filter: brightness(20%);
+}
+
+
+.avatar-icons {
+
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    color: white;
+    top: 0%;
+
+    display: none;
+
+    backdrop-filter: brightness(40%);
+
+    border-radius: 200px;
+}
+
+.avatar-icons span {
+
+    color: white;
+}
+
+.avatar-icons i {
+
+    font-size: 40px;
+}
+
+.profile-upper-right {
+
+    /* border: 2px solid blue; */
+    width: 300px;
+
+}
+
+@media screen and (max-width : 450px) {
+
+    .profile-upper-right {
+
+        margin-top: 50px;
+    }
+
+}
+
+
+/* DESIGNING PROFILE LOWER SECTION */
+.profile-lower {
+
+    /* border: 2px solid green; */
+    border: 2px solid rgb(231, 231, 231);
+}
+
+.profile-lower-nav {
+
+    /* border-bottom: 2px solid rgb(231, 231, 231); */
+}
+
+.profile-lower-nav button {
+
+    border-radius: 0px;
+}
+
+.profile-lower-nav button:hover {
+
+    background-color: #cccccc !important;
+}
+
+.profile-lower-nav button:active {
+
+    background-color: #bcbcbc !important;
+}

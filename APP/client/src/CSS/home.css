@@ -1,0 +1,29 @@
+.writer-card {
+
+    /* border: 2px solid red; */
+
+    width: 200px;
+
+    height: 275px;
+
+    border-radius: 15px;
+
+    /* border: 2px solid var(--primary); */
+}
+
+.writer-img {
+
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+
+    border-radius: 200px;
+
+}
+
+.home-top-blogs-container,
+.home-top-writers-container,
+.home-top-categories-container {
+
+    border: 2px solid rgb(231, 231, 231);
+}
