@@ -48,8 +48,9 @@ app.use("/user", userRoutes.update_avatar_route)// Route To Update User Avatar D
 
 // Configuring Article Routes
 
-app.use("/article", articleRoutes.create_article_route);  // Route To Insert Article To DB 
+app.use("/article", articleRoutes.publish_article_route);  // Route To Insert Article To DB 
 app.use("/article", articleRoutes.read_article_route);  // Route To Read Article/s From DB 
+app.use("/article", articleRoutes.single_article_route);  // Route To Read Article/s From DB 
 app.use("/article", articleRoutes.update_article_route);  // Route To Update Article In DB 
 app.use("/article", articleRoutes.delete_article_route);  // Route To Delete Article From DB 
 

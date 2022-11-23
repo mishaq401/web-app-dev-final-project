@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider, Outlet, } from "react-router-dom";
+import { useContext, useEffect } from "react";
 import Cookies from "js-cookie";
 
 
@@ -26,7 +27,7 @@ import "../CSS/style.css";
 import "../CSS/home.css";
 import "../CSS/profile.css";
 import "../CSS/editor.css";
-import { useContext, useEffect } from "react";
+import "../CSS/singlearticle.css"
 
 
 const Layout = () => {
@@ -49,7 +50,7 @@ function App() {
   useEffect(() => {
 
     const LoggedInUser = Cookies.get("user");
-    console.log(LoggedInUser);
+    // console.log(LoggedInUser);
 
     if (LoggedInUser) {
 
@@ -71,7 +72,7 @@ function App() {
         },
 
         {
-          path: "/article/:id",
+          path: "/article/:ArticleId",
           element: <SingleArticle />
         },
 
