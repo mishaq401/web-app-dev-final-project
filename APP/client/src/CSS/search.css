@@ -1,0 +1,13 @@
+.search-form button {
+
+    border-radius: 0px !important;
+    border-width: 2px !important;
+    border-left: none;
+}
+
+.search-form input {
+
+    border-width: 2px !important;
+    border-right: none;
+    width: 325px;
+}

@@ -42,11 +42,6 @@ const Navbar = () => {
                             <NavLink className="nav-link p-0 text-white px-4 pt-3 pb-3" to="/">Home</NavLink>
                         </li>
 
-
-                        <li className="nav-item ">
-                            <NavLink className="nav-link p-0 text-white px-4 pt-3 pb-3" to="/categories">Categories</NavLink>
-                        </li>
-
                         <li className="nav-item ">
                             <NavLink className="nav-link p-0 text-white px-4 pt-3 pb-3" to="/search">Search</NavLink>
                         </li>

@@ -15,7 +15,12 @@ const ArticleEditor = () => {
 
         e.preventDefault();
 
-        console.log(article);
+        console.log(ArticleText.length);
+        console.log(ArticleText);
+        if (ArticleText.length == 0) {
+
+            alert("text cant be empty")
+        }
     }
 
     return (<>
@@ -24,16 +29,17 @@ const ArticleEditor = () => {
 
         <form onSubmit={PublishArticle} className="editor-container container my-5 p-0 d-flex flex-column align-items-center">
 
+            <input className='title-input fs-4 fw-bol px-3 py-3 shadow' type="text" placeholder='Enter Article Title' />
 
-            <div className="text-editor-container w-100">
-                <ReactQuill theme="snow" value={ArticleText} onChange={setArticleText} />
+            <div className="text-editor-container w-100 shadow">
+                <ReactQuill theme="snow" value={ArticleText} onChange={setArticleText} placeholder="Start Writing Your Article From Here.....! " />
             </div>
 
 
-            <div className="editor-bottom d-flex justify-content-evenly align-items-center flex-wrap mt-5 gap-5">
+            <div className="editor-bottom d-flex justify-content-evenly align-items-center flex-wrap  gap-5">
 
 
-                <div className="editor-bottom-content py-4 shadow-lg d-flex flex-wrap px-5 gap-4">
+                <div className="editor-bottom-content py-4 shadow d-flex flex-wrap px-5 gap-4">
                     {/* 
                     <span className='editor-right-heading fs- fw-bold pb-'>Change Visibility:</span>
                     <select className='fs- text-cente pb-1' name="visibility">
@@ -42,16 +48,16 @@ const ArticleEditor = () => {
                     </select> */}
 
                     <span className='editor-right-heading fs-5 fw-bold pb-'>Add Thumbnail:</span>
-                    <input type="file" name="" id="thumbnail" />
+                    <input type="file" name="" id="thumbnail" required />
                     {/* <label htmlFor="thumbnail">Click To Upload Thumbnail</label> */}
 
                     <span className='editor-right-heading fs-5 fw-bold pb-'>Add Cover Image:</span>
-                    <input type="file" name="" id="artimage" />
+                    <input type="file" name="" id="artimage" required />
 
                 </div>
 
 
-                <div className="editor-bottom-content shadow-lg d-flex flex-column align-items-start py-4 px-5 gap-3">
+                <div className="editor-bottom-content shadow d-flex flex-column align-items-start py-4 px-5 gap-3">
 
                     <span className='editor-right-heading fs-5 fw-bold pb- mb-2'>Add Category</span>
 
@@ -98,7 +104,7 @@ const ArticleEditor = () => {
 
             </div>
 
-            <button className='article-publish-btn btn btn-primary rounded-pill mt-5 fs-5 pb-2' type="submit">Publish</button>
+            <button className='article-publish-btn btn btn-primary rounded-pill fs-5 pb-2' type="submit">Publish</button>
 
         </form>
 

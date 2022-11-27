@@ -1,6 +1,8 @@
 .editor-container {
 
     /* border: 2px solid red; */
+
+    gap: 50px;
 }
 
 .text-editor-container {
@@ -43,6 +45,11 @@
 
 }
 
+.title-input {
+
+    width: 350px;
+}
+
 
 @media screen and (max-width:450px) {
 
@@ -50,7 +57,7 @@
 
         flex-direction: column;
 
-        gap: 50px;
+        /* gap: 50px; */
     }
 
     .text-editor-container,

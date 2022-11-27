@@ -8,7 +8,6 @@ import Login from "./Login/Login";
 import Register from "./Register/Register";
 import SingleArticle from "./SingleArticle/SingleArticle";
 import BlogSearch from "./BlogSearch/Search";
-import Categories from "./Categories/Categories";
 import Contact from "./Contact/Contact";
 import ArticleEditor from "./ArticleEditor/ArticleEditor";
 
@@ -28,6 +27,8 @@ import "../CSS/home.css";
 import "../CSS/profile.css";
 import "../CSS/editor.css";
 import "../CSS/singlearticle.css"
+import "../CSS/comments.css"
+import "../CSS/search.css"
 
 
 const Layout = () => {
@@ -79,11 +80,6 @@ function App() {
         {
           path: "/search",
           element: <BlogSearch />,
-        },
-
-        {
-          path: "/categories",
-          element: <Categories />,
         },
 
         {
