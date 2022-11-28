@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import "../../../node_modules/bootstrap/dist/js/bootstrap"
 import { LogoutAction, userContext } from "../../CONTEXTS/UserContext";
 import Cookies from "js-cookie";
+import "../../../node_modules/bootstrap/dist/js/bootstrap"
 
 
 const Navbar = () => {
@@ -36,10 +36,10 @@ const Navbar = () => {
 
                 <div className="collapse navbar-collapse justify-content-end " id="navbarNav">
 
-                    <ul className="navbar-nav justify-content-evenly fs-5 fw-bold" style={{ width: "60 %" }}>
+                    <ul className="navbar-nav justify-content-evenly fs-5 fw-bol" style={{ width: "60 %" }}>
 
                         <li className="nav-item ">
-                            <NavLink className="nav-link p-0 text-white px-4 pt-3 pb-3" to="/">Home</NavLink>
+                            <NavLink className="nav-link p-0 text-white px-4 pt-3 pb-3 " to="/">Home</NavLink>
                         </li>
 
                         <li className="nav-item ">
@@ -69,6 +69,10 @@ const Navbar = () => {
 
                         <li className="nav-item ">
                             <NavLink className="nav-link p-0 text-white px-4 pt-3 pb-3" to="/contact">Contact</NavLink>
+                        </li>
+
+                        <li className="nav-item ">
+                            <NavLink className="nav-link p-0 text-white px-4 pt-3 pb-3" to="/contact">Create</NavLink>
                         </li>
 
 

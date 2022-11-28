@@ -7,20 +7,25 @@ const ArticleEditor = () => {
 
     document.title = "DailyPost | Editor"
 
+    const [title, setTitle] = useState("")
     const [ArticleText, setArticleText] = useState("")
+    const [CoverImage, setCoverImage] = useState();
+    const [thumbnail, setThumbnail] = useState()
 
-    const [article, setArticle] = useState({ ArticleText, category: "", })
 
     const PublishArticle = (e) => {
 
         e.preventDefault();
 
-        console.log(ArticleText.length);
-        console.log(ArticleText);
-        if (ArticleText.length == 0) {
+        const NewArticleData = new FormData();
 
-            alert("text cant be empty")
-        }
+        NewArticleData.append("title", title);
+        NewArticleData.append("content", ArticleText);
+        NewArticleData.append("coverimage", CoverImage)
+        NewArticleData.append("thumbnail", thumbnail)
+
+        console.log(NewArticleData);
+
     }
 
     return (<>
@@ -29,10 +34,11 @@ const ArticleEditor = () => {
 
         <form onSubmit={PublishArticle} className="editor-container container my-5 p-0 d-flex flex-column align-items-center">
 
-            <input className='title-input fs-4 fw-bol px-3 py-3 shadow' type="text" placeholder='Enter Article Title' />
+            <input className='title-input fs-4 fw-bol px-3 py-3 shadow' type="text" onChange={e => setTitle(e.target.value)} placeholder='Enter Article Title' />
+
 
             <div className="text-editor-container w-100 shadow">
-                <ReactQuill theme="snow" value={ArticleText} onChange={setArticleText} placeholder="Start Writing Your Article From Here.....! " />
+                <ReactQuill theme="snow" value={ArticleText} onChange={setArticleText} placeholder="Start Writing Your Article From Here.....! " required />
             </div>
 
 
@@ -40,19 +46,27 @@ const ArticleEditor = () => {
 
 
                 <div className="editor-bottom-content py-4 shadow d-flex flex-wrap px-5 gap-4">
+
                     {/* 
+                    
                     <span className='editor-right-heading fs- fw-bold pb-'>Change Visibility:</span>
+                    
                     <select className='fs- text-cente pb-1' name="visibility">
                         <option value="public"> Public</option>
                         <option value="private"> Private</option>
-                    </select> */}
+                    </select> 
+                    
+                    */}
 
                     <span className='editor-right-heading fs-5 fw-bold pb-'>Add Thumbnail:</span>
-                    <input type="file" name="" id="thumbnail" required />
-                    {/* <label htmlFor="thumbnail">Click To Upload Thumbnail</label> */}
+                    <input type="file" onChange={e => setThumbnail(e.target.files[0])} accept="image/*" required />
+
+                    {/*
+                     <label htmlFor="thumbnail">Click To Upload Thumbnail</label>
+                    */}
 
                     <span className='editor-right-heading fs-5 fw-bold pb-'>Add Cover Image:</span>
-                    <input type="file" name="" id="artimage" required />
+                    <input type="file" onChange={e => setCoverImage(e.target.files[0])} accept="image/*" required />
 
                 </div>
 
@@ -114,10 +128,7 @@ const ArticleEditor = () => {
 export default ArticleEditor;
 
 
-
-
 /*<div className="editor-bottom d-flex justify-content-evenly align-items-center flex-wrap mt-5 gap-5">
-
 
 <div className="editor-right-content py-4 shadow-lg d-flex flex-column px-5 gap-4">
      

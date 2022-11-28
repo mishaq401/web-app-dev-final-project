@@ -14,9 +14,11 @@ const mysql_connection = mysql.createConnection({
 
 // Table Names So We Dont have To Update Them Everywhere If Update Required
 const UserTable = "users";
-const ArticleTable = "articles";
+const ArticleTable = "articles"
+const ArticleImagesTable = "article_images";
+const CommentsTable = "comments"
 
 
 
-module.exports = { mysql_connection, UserTable, ArticleTable };
+module.exports = { mysql_connection, UserTable, ArticleTable, ArticleImagesTable, CommentsTable };
 

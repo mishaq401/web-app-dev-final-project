@@ -8,10 +8,10 @@ const BlogCard = () => {
 
             <div className="blog-left bg-white py-4 px-4 shadow d-flex flex-column align-items-start mt-0">
 
-                <h3 style={{ width: "max-content " }}
+                <h4 style={{ width: "max-content " }}
                     className=" text-dark border-bottom border-4 border-danger mauto  mb-3 pb-1">
                     Blog Title
-                </h3>
+                </h4>
 
                 <p className=" fs- mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum tempora temporibus,
                     praesentium

@@ -1,11 +1,15 @@
 const router = require("express").Router();
 
 const db = require("../../../db/db_connection");
+const ArticleTable = require("../../../db/db_connection").ArticleTable;
 
 
 router.post("/create-article", (req, res) => {
 
-    res.send("article Created")
+    const { publisher, text, thumbnail, cover } = req.body;
+
+    res.send("Article Created");
+
 })
 
 module.exports = router;
