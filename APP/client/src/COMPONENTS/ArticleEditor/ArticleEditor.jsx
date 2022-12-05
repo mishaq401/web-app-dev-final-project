@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import ReactQuill from 'react-quill';
+import { useContext } from "react";
+import { userContext } from "../../CONTEXTS/UserContext";
 import 'react-quill/dist/quill.snow.css';
-
+import api from '../../BACKEND/server';
 
 const ArticleEditor = () => {
 
@@ -9,22 +11,26 @@ const ArticleEditor = () => {
 
     const [title, setTitle] = useState("")
     const [ArticleText, setArticleText] = useState("")
+    const [description, setDescription] = useState("");
     const [CoverImage, setCoverImage] = useState();
     const [thumbnail, setThumbnail] = useState()
 
+    const { user } = useContext(userContext);
 
-    const PublishArticle = (e) => {
+    const PublishArticle = async (e) => {
 
         e.preventDefault();
 
-        const NewArticleData = new FormData();
+        const ArticleFormData = new FormData();
 
-        NewArticleData.append("title", title);
-        NewArticleData.append("content", ArticleText);
-        NewArticleData.append("coverimage", CoverImage)
-        NewArticleData.append("thumbnail", thumbnail)
+        ArticleFormData.append("title", title)
+        ArticleFormData.append("description", description)
+        ArticleFormData.append("content", ArticleText)
+        ArticleFormData.append("publisher", user.id)
+        ArticleFormData.append("thumbnail", thumbnail);
+        ArticleFormData.append("coverimage", CoverImage);
 
-        console.log(NewArticleData);
+        await api.post("/article/publish-article", ArticleFormData);
 
     }
 
@@ -36,9 +42,10 @@ const ArticleEditor = () => {
 
             <input className='title-input fs-4 fw-bol px-3 py-3 shadow' type="text" onChange={e => setTitle(e.target.value)} placeholder='Enter Article Title' />
 
+            <textarea className='px-3 py-2 shadow' cols="44" rows="4" maxLength={200} value={description} onChange={e => setDescription(e.target.value)} placeholder="Enter Description For Your Article. Max 200 Characters..!" />
 
             <div className="text-editor-container w-100 shadow">
-                <ReactQuill theme="snow" value={ArticleText} onChange={setArticleText} placeholder="Start Writing Your Article From Here.....! " required />
+                <ReactQuill theme="snow" value={ArticleText} onChange={setArticleText} placeholder="Start Writing Your Article From Here.....! " />
             </div>
 
 
@@ -59,18 +66,19 @@ const ArticleEditor = () => {
                     */}
 
                     <span className='editor-right-heading fs-5 fw-bold pb-'>Add Thumbnail:</span>
-                    <input type="file" onChange={e => setThumbnail(e.target.files[0])} accept="image/*" required />
+                    <input type="file" onChange={e => setThumbnail(e.target.files[0])} accept="image/*" />
 
                     {/*
                      <label htmlFor="thumbnail">Click To Upload Thumbnail</label>
                     */}
 
                     <span className='editor-right-heading fs-5 fw-bold pb-'>Add Cover Image:</span>
-                    <input type="file" onChange={e => setCoverImage(e.target.files[0])} accept="image/*" required />
+                    <input type="file" onChange={e => setCoverImage(e.target.files[0])} accept="image/*" />
 
                 </div>
 
-
+                {/*
+                
                 <div className="editor-bottom-content shadow d-flex flex-column align-items-start py-4 px-5 gap-3">
 
                     <span className='editor-right-heading fs-5 fw-bold pb- mb-2'>Add Category</span>
@@ -104,7 +112,7 @@ const ArticleEditor = () => {
 
                         <div>
                             <input className='me-2' type="radio" name="category" value="education" required />
-                            <span className='fw-bol'>Education</span>
+                            <span className='fw-bol'>Education</span> 
                         </div>
 
                         <div>
@@ -115,6 +123,7 @@ const ArticleEditor = () => {
                     </div>
 
                 </div>
+                */}
 
             </div>
 
@@ -123,6 +132,7 @@ const ArticleEditor = () => {
         </form>
 
     </>);
+
 }
 
 export default ArticleEditor;
@@ -158,7 +168,7 @@ export default ArticleEditor;
     </div>
 
     <div>
-        <input className='me-2' type="radio" name="category" value="Technology" required />
+         <input className='me-2' type="radio" name="category" value="Technology" required />
         <span className='fw-bol'>Technology</span>
     </div>
 
@@ -188,7 +198,6 @@ export default ArticleEditor;
     </div>
 
 </div>
-
 
 </div>
 */
