@@ -1,7 +1,12 @@
 import { NavLink } from "react-router-dom";
-
+import { useParams } from "react-router-dom";
 
 const ArticleContent = () => {
+
+    const { ArticleId } = useParams();
+
+    console.log("Hello", ArticleId);
+
 
     return (<>
 

@@ -9,7 +9,7 @@ router.post("/create-user", (req, res) => {
 
 
     const { name, email, password } = req.body;
-    let EmailExist = "no";
+
     let SecurePassword = "";
     let query = "";
 

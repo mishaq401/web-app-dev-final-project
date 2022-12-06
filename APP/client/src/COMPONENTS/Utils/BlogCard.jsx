@@ -13,7 +13,8 @@ const BlogCard = () => {
                     Blog Title
                 </h4>
 
-                <p className=" fs- mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia doloribus qui consequatur velit consectetur architecto quia numquam, nam aut impedit soluta quos temporibus laboriosam. Ipsa.
+                <p className=" fs- mb-0">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia doloribus qui consequatur velit consectetur architecto quia numquam, nam aut impedit soluta quos temporibus laboriosam. Ipsa.
                 </p>
 
                 <small className="mt-3 text-secondary">By Mian Muhammad Ishaq</small>

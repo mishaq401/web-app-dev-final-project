@@ -31,28 +31,35 @@ router.post("/publish-article", upload.fields([{ name: "thumbnail", maxCount: 1 
     const thumbnail = req.files.thumbnail[0]
     const CoverImage = req.files.coverimage[0]
 
-    console.log(publisher);
+    try {
 
-    const query = `INSERT INTO ${ArticleTable} (title, description, content, publisher, publish_date) values ("${title}", "${description}", "${content}", "${publisher}", curdate()); `;
-    const images_query = `INSERT INTO`
-    // console.log(query);
+        const query = `INSERT INTO ${ArticleTable} (title, description, content, publisher, publish_date) values ("${title}", "${description}", "${content}", "${publisher}", curdate()); `;
 
-    db.query(query);
+        db.query(query);
 
-    db.query("SELECT last_insert_id() as CurrentArticleInsert;", (err, res) => {
+        db.query("SELECT last_insert_id() as CurrentArticleInsert;", (err, res) => {
 
-        const { CurrentArticleInsert } = res[0];
+            // Getting The Primary Key Value Of Currently Inserted Article
+            const { CurrentArticleInsert } = res[0];
 
-        console.log(thumbnail);
-        console.log(CoverImage);
+            // Uploading Images For Article And Giving Article ID as Reference
+            const images_query = `INSERT INTO ${ArticleImagesTable}(thumbnail, cover_image, article) values("${thumbnail.filename}", "${CoverImage.filename}", ${CurrentArticleInsert})`;
 
-        const images_query = `INSERT INTO ${ArticleImagesTable}(thumbnail, cover_image, article) values("${thumbnail.filename}", "${CoverImage.filename}", ${CurrentArticleInsert})`;
+            db.query(images_query);
+        })
 
-        db.query(images_query);
-    })
+        res.status(200).send({ message: "Article Published Successfully" });
 
-    res.json({ message: "Article Published Successfully" });
+    }
 
+    catch (err) {
+
+        if (err) {
+
+            console.log(error);
+            res.status(500).send({ message: 'Server Error Please Try Again Later' });
+        }
+    }
 
 })
 

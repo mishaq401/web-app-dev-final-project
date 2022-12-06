@@ -22,15 +22,29 @@ const ArticleEditor = () => {
         e.preventDefault();
 
         const ArticleFormData = new FormData();
+        try {
 
-        ArticleFormData.append("title", title)
-        ArticleFormData.append("description", description)
-        ArticleFormData.append("content", ArticleText)
-        ArticleFormData.append("publisher", user.id)
-        ArticleFormData.append("thumbnail", thumbnail);
-        ArticleFormData.append("coverimage", CoverImage);
 
-        await api.post("/article/publish-article", ArticleFormData);
+            ArticleFormData.append("title", title)
+            ArticleFormData.append("description", description)
+            ArticleFormData.append("content", ArticleText)
+            ArticleFormData.append("publisher", user.id)
+            ArticleFormData.append("thumbnail", thumbnail);
+            ArticleFormData.append("coverimage", CoverImage);
+
+            const ArticleUploadRes = await api.post("/article/publish-article", ArticleFormData);
+
+            console.log(ArticleUploadRes);
+        }
+
+        catch (error) {
+
+            if (error) {
+
+                alert("Internal Server Error! Please Try Again Later.");
+            }
+        }
+
 
     }
 
