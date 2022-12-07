@@ -1,12 +1,10 @@
 import { NavLink } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import parse from 'html-react-parser';
 
-const ArticleContent = () => {
+const ArticleContent = (params) => {
 
-    const { ArticleId } = useParams();
-
-    console.log("Hello", ArticleId);
-
+    const { article } = params
 
     return (<>
 
@@ -16,15 +14,12 @@ const ArticleContent = () => {
             <img src="https://imageio.forbes.com/specials-images/imageserve/61d52d4e3a76ed81ac034ea8/The-10-Tech-Trends-That-Will-Transform-Our-World/960x0.jpg?format=jpg&width=960" alt="" className="article-cover-img" />
 
 
-            <h1 className="article-title mt-5 mb-3 mx-5">Title Of The Article</h1>
+            <h1 className="article-title mt-5 mb-3 mx-5">{article.title}</h1>
 
 
             <div className="article-content mx-5">
 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam odit excepturi odio hic laboriosam molestiae ducimus optio eius nulla commodi dignissimos, tenetur nam aliquam deserunt eveniet earum magni qui cupiditate nostrum necessitatibus ad. Velit voluptatibus necessitatibus earum, doloribus et doloremque debitis? Maiores, sunt fugit quae mollitia in numquam fuga quo adipisci architecto blanditiis corporis necessitatibus impedit, modi tempore hic aperiam. Rem optio dolores fugit, saepe sapiente exercitationem itaque dolor minus aut laudantium officia laboriosam impedit voluptas expedita in iste repellat aliquam quis, temporibus, soluta labore. Saepe dicta odit deleniti minus adipisci? Facilis iste distinctio nam voluptatem aliquam nisi dolores quaerat.            </p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam odit excepturi odio hic laboriosam molestiae ducimus optio eius nulla commodi dignissimos, tenetur nam aliquam deserunt eveniet earum magni qui cupiditate nostrum necessitatibus ad. Velit voluptatibus necessitatibus earum, doloribus et doloremque debitis? Maiores, sunt fugit quae mollitia in numquam fuga quo adipisci architecto blanditiis corporis necessitatibus impedit, modi tempore hic aperiam. Rem optio dolores fugit, saepe sapiente exercitationem itaque dolor minus aut laudantium officia laboriosam impedit voluptas expedita in iste repellat aliquam quis, temporibus, soluta labore. Saepe dicta odit deleniti minus adipisci? Facilis iste distinctio nam voluptatem aliquam nisi dolores quaerat.            </p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam odit excepturi odio hic laboriosam molestiae ducimus optio eius nulla commodi dignissimos, tenetur nam aliquam deserunt eveniet earum magni qui cupiditate nostrum necessitatibus ad. Velit voluptatibus necessitatibus earum, doloribus et doloremque debitis? Maiores, sunt fugit quae mollitia in numquam fuga quo adipisci architecto blanditiis corporis necessitatibus impedit, modi tempore hic aperiam. Rem optio dolores fugit, saepe sapiente exercitationem itaque dolor minus aut laudantium officia laboriosam impedit voluptas expedita in iste repellat aliquam quis, temporibus, soluta labore. Saepe dicta odit deleniti minus adipisci? Facilis iste distinctio nam voluptatem aliquam nisi dolores quaerat.            </p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam odit excepturi odio hic laboriosam molestiae ducimus optio eius nulla commodi dignissimos, tenetur nam aliquam deserunt eveniet earum magni qui cupiditate nostrum necessitatibus ad. Velit voluptatibus necessitatibus earum, doloribus et doloremque debitis? Maiores, sunt fugit quae mollitia in numquam fuga quo adipisci architecto blanditiis corporis necessitatibus impedit, modi tempore hic aperiam. Rem optio dolores fugit, saepe sapiente exercitationem itaque dolor minus aut laudantium officia laboriosam impedit voluptas expedita in iste repellat aliquam quis, temporibus, soluta labore. Saepe dicta odit deleniti minus adipisci? Facilis iste distinctio nam voluptatem aliquam nisi dolores quaerat.            </p>
+                {parse(article.content)}
 
             </div>
 

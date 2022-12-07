@@ -72,7 +72,7 @@ const Navbar = () => {
                         </li>
 
                         <li className="nav-item ">
-                            <NavLink className="nav-link p-0 text-white px-4 pt-3 pb-3" to="/contact">Create</NavLink>
+                            <NavLink className="nav-link p-0 text-white px-4 pt-3 pb-3" to="/editor">Create</NavLink>
                         </li>
 
 

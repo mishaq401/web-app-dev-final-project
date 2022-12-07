@@ -41,6 +41,8 @@ const ArticleEditor = () => {
 
             if (error) {
 
+                console.log(error)
+
                 alert("Internal Server Error! Please Try Again Later.");
             }
         }
@@ -144,6 +146,8 @@ const ArticleEditor = () => {
             <button className='article-publish-btn btn btn-primary rounded-pill fs-5 pb-2' type="submit">Publish</button>
 
         </form>
+
+        <div>{ArticleText}</div>
 
     </>);
 

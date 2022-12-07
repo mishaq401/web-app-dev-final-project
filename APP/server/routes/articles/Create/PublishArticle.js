@@ -40,6 +40,7 @@ router.post("/publish-article", upload.fields([{ name: "thumbnail", maxCount: 1 
         db.query("SELECT last_insert_id() as CurrentArticleInsert;", (err, res) => {
 
             // Getting The Primary Key Value Of Currently Inserted Article
+            console.log(res[0]);
             const { CurrentArticleInsert } = res[0];
 
             // Uploading Images For Article And Giving Article ID as Reference
