@@ -147,7 +147,6 @@ const ArticleEditor = () => {
 
         </form>
 
-        <div>{ArticleText}</div>
 
     </>);
 

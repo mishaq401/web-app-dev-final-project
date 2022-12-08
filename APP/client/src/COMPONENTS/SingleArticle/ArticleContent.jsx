@@ -5,13 +5,14 @@ import parse from 'html-react-parser';
 const ArticleContent = (params) => {
 
     const { article } = params
+    const date = new Date()
 
     return (<>
 
         <div className="article-content-container container shadow my-5 p-0 pb-4">
 
 
-            <img src="https://imageio.forbes.com/specials-images/imageserve/61d52d4e3a76ed81ac034ea8/The-10-Tech-Trends-That-Will-Transform-Our-World/960x0.jpg?format=jpg&width=960" alt="" className="article-cover-img" />
+            <img src={`http://localhost:5500/public/article/${article.cover_image}`} alt="" className="article-cover-img" />
 
 
             <h1 className="article-title mt-5 mb-3 mx-5">{article.title}</h1>
@@ -33,8 +34,8 @@ const ArticleContent = (params) => {
 
                     <div className="publish-info-text d-flex flex-column justify-content-center">
 
-                        <NavLink className="text-primar fw-bold fs-5">Mian Muhammad Ishaq</NavLink>
-                        <span className="text-secondary">Published On: 5 January, 2021</span>
+                        <NavLink className="text-primar fw-bold fs-5">{article.publisher_name}</NavLink>
+                        <span className="text-secondary">Published On: {date.toDateString(article.publish_date)}</span>
 
                     </div>
 
@@ -46,6 +47,8 @@ const ArticleContent = (params) => {
         </div>
 
     </>);
+
+
 }
 
 export default ArticleContent;

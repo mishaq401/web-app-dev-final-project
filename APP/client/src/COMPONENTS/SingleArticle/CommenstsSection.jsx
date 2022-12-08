@@ -1,6 +1,8 @@
 import CommentCard from "../Utils/CommentCard";
 
 const CommentsSection = () => {
+
+
     return (<>
 
         <div className="article-comment-container container shadow-lg my-5 px-4 py-4 d-flex flex-column align-items-start">

@@ -13,7 +13,7 @@ const SingleArticle = () => {
 
     const [article, SetArticle] = useState({});
 
-    document.title = "DailyPost | Title Of The Article";
+    document.title = `DailyPost | ${article.title}`;
 
     useEffect(() => {
 
@@ -31,8 +31,6 @@ const SingleArticle = () => {
 
             }
 
-
-
         }
 
         GetArticle();
@@ -42,14 +40,24 @@ const SingleArticle = () => {
     return (<>
 
 
-        {ArticleExist ?
+        {ArticleExist
+
+            ?
+
             <>
                 <ArticleContent article={article} />
 
                 <CommentsSection />
             </>
+
             :
-            <span>Hello</span>
+
+            <div className="article-content-container container shadow my-5 p-0 py-4 text-center fs-5 fw-bold text-danger">
+
+                Article Not Found..!
+
+            </div>
+
         }
 
 
