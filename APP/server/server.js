@@ -35,6 +35,7 @@ const db = require("./db/db_connection");
 
 const userRoutes = require('./routes/userRoutes');
 const articleRoutes = require('./routes/articleRoutes');
+const commentRoutes = require("./routes/commentsRoute")
 
 // Configuring User Routes
 
@@ -53,6 +54,10 @@ app.use("/article", articleRoutes.read_article_route);  // Route To Read Article
 app.use("/article", articleRoutes.single_article_route);  // Route To Read Article/s From DB 
 app.use("/article", articleRoutes.update_article_route);  // Route To Update Article In DB 
 app.use("/article", articleRoutes.delete_article_route);  // Route To Delete Article From DB 
+
+// Configuring Comment Routes
+
+app.use("/comment", commentRoutes.create_comment_route);  // Route to Insert Comment Into DB
 
 
 /*  Configuring Port Listener  */

@@ -27,6 +27,7 @@ const upload = multer({ storage: storage })
 router.post("/publish-article", upload.fields([{ name: "thumbnail", maxCount: 1 }, { name: "coverimage", maxCount: 1 }]), (req, res) => {
 
     const { title, content, description, publisher } = req.body;
+    const date = new Date();
 
     const thumbnail = req.files.thumbnail[0]
     const CoverImage = req.files.coverimage[0]
@@ -40,7 +41,7 @@ router.post("/publish-article", upload.fields([{ name: "thumbnail", maxCount: 1 
         db.query("SELECT last_insert_id() as CurrentArticleInsert;", (err, res) => {
 
             // Getting The Primary Key Value Of Currently Inserted Article
-            console.log(res[0]);
+            // console.log(res[0]);
             const { CurrentArticleInsert } = res[0];
 
             // Uploading Images For Article And Giving Article ID as Reference
