@@ -1,10 +1,6 @@
-import { useEffect } from "react";
-import { NavLink } from "react-router-dom";
 import BlogCard from "../Utils/BlogCard";
 import Carousel from "../Utils/Carousel";
-import CategoryCard from "../Utils/CategoryCard";
-import WriterCard from "../Utils/WriterCard";
-import Cookies from "js-cookie"
+
 
 const Home = () => {
 

@@ -1,17 +1,20 @@
 const router = require("express").Router();
 
-const db = require("../../../db/db_connection");
+const db = require("../../../db/db_connection").mysql_connection;
+const CommentsTable = require("../../../db/db_connection").CommentsTable;
 
 
 router.post("/create-comment", (req, res) => {
 
 
-    console.log(req.body);
+    const { publisher, article, comment_text } = req.body;
 
     try {
 
         // Query To Insert Comment Into Database
-        const query = ` insert into comments(text, publisher, article, publish_date) `
+        const query = ` insert into ${CommentsTable} (text, publisher, article, publish_date) values ( "${comment_text}", "${publisher}", "${article}", curdate() ) `;
+
+        db.query(query);
 
     }
 

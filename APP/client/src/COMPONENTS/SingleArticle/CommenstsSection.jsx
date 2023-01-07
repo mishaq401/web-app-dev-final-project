@@ -15,7 +15,7 @@ const CommentsSection = () => {
     const date = new Date();
 
     const [commentsl_list, setCommentsList] = useState([]);
-    const [new_comment, setNewComment] = useState({ publiser: user.id, article: Number(ArticleId), comment_text: "" });
+    const [new_comment, setNewComment] = useState({ publisher: user.id, article: Number(ArticleId), comment_text: "" });
 
     const getNewComment = (e) => {
 
@@ -29,7 +29,7 @@ const CommentsSection = () => {
 
         e.preventDefault();
 
-        const comment_res = api.post("/article/create-comment", new_comment);
+        const comment_res = api.post("/comment/create-comment", new_comment);
     }
 
     const getComments = () => { }
